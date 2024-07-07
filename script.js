@@ -61,30 +61,34 @@ function calculateChange(changeDue, cid) {
 
   for (let i = denominations.length - 1; i >= 0; i--) {
     const [denomination, value] = denominations[i];
-    let amountInDrawer = cid[i][1];
+    let amountInDrawer = cid.find(item => item[0] === denomination)[1];
     let amountToReturn = 0;
-
+  
     while (changeDue >= value && amountInDrawer > 0) {
       changeDue -= value;
       changeDue = Math.round(changeDue * 100) / 100;
       amountInDrawer -= value;
       amountToReturn += value;
     }
-
+  
     if (amountToReturn > 0) {
       change.push([denomination, amountToReturn]);
     }
   }
+  
+  const totalChangeGiven = change.reduce((sum, [denomination, amount]) => sum + amount, 0).toFixed(2);
 
-  const totalChangeGiven = change.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
 
   if (changeDue > 0) {
-    return { status: "INSUFFICIENT_FUNDS", change: [] };
+    return { status: 'INSUFFICIENT_FUNDS', change: [] };
   }
 
-  if (totalCid == totalChangeGiven) {
-    return { status: "CLOSED", change: change };
+  if (totalCid === totalChangeGiven) {
+    return { 
+      status: 'CLOSED', 
+      change: change.sort((a, b) => denominations.indexOf(b[0]) - denominations.indexOf(a[0])) 
+    };
   }
-
-  return { status: "OPEN", change: change };
+  
+  return { status: 'OPEN', change };
 }
