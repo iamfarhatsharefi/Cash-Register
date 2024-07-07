@@ -1,23 +1,23 @@
-let price = 19.5;
-let cid = [
-  ["PENNY", 0.5],
-  ["NICKEL", 0],
-  ["DIME", 0],
-  ["QUARTER", 0],
-  ["ONE", 0],
-  ["FIVE", 0],
-  ["TEN", 0],
-  ["TWENTY", 0],
-  ["ONE HUNDRED", 0]
+const price = 19.5;
+const cid = [
+  ['PENNY', 0.5],
+  ['NICKEL', 0],
+  ['DIME', 0],
+  ['QUARTER', 0],
+  ['ONE', 0],
+  ['FIVE', 0],
+  ['TEN', 0],
+  ['TWENTY', 0],
+  ['ONE HUNDRED', 0],
 ];
 
-const cashInput = document.getElementById("cash");
-const changeDueElement = document.getElementById("change-due");
-const purchaseBtn = document.getElementById("purchase-btn");
+const cashInput = document.getElementById('cash');
+const changeDueElement = document.getElementById('change-due');
+const purchaseBtn = document.getElementById('purchase-btn');
 
 purchaseBtn.addEventListener("click", () => {
   const cashGiven = parseFloat(cashInput.value);
-  if (isNaN(cashGiven)) {
+  if (Number.isNaN(cashGiven)) {
     alert("Please enter a valid number");
     return;
   }
@@ -27,7 +27,7 @@ purchaseBtn.addEventListener("click", () => {
     return;
   }
 
-  let changeDue = cashGiven - price;
+  const changeDue = cashGiven - price;
   if (changeDue === 0) {
     changeDueElement.textContent = "No change due - customer paid with exact cash";
     return;
