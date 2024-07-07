@@ -48,13 +48,13 @@ body {
 h1 {
   margin-bottom: 20px;
   font-size: 2em;
-  color:  #fc0;
+  color: #fc0;
 }
 
 .input-group {
   margin-bottom: 15px;
   text-align: left;
-  }
+}
 
 label {
   display: block;
