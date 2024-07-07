@@ -48,12 +48,12 @@ body {
 h1 {
   margin-bottom: 20px;
   font-size: 2em;
-  color:  "#fc0";
+  color:  #fc0;
 }
 
 .input-group {
-    margin-bottom: 15px;
-    text-align: left;
+  margin-bottom: 15px;
+  text-align: left;
   }
 
 label {
@@ -86,7 +86,7 @@ button {
 .change-due {
   margin-top: 20px;
   font-weight: bold;
-  color: #ffcc00;
+  color: #fc0;
 }
 
 @media (max-width: 768px) {
