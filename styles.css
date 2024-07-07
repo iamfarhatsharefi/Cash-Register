@@ -1,25 +1,26 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: url('cash\ register.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
   }
-  
-  @keyframes fadeIn {
+
+@keyframes fadeIn {
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
   }
-  
-  @keyframes buttonHover {
+
+@keyframes buttonHover {
     0% {
       background-color: #28a745;
     }
@@ -30,7 +31,7 @@ body {
       background-color: #28a745;
     }
   }
-  
+
   .container {
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
@@ -41,24 +42,24 @@ body {
     width: 100%;
     animation: fadeIn 1s ease-in-out;
   }
-  
+
   h1 {
     margin-bottom: 20px;
     font-size: 2em;
     color: #ffcc00;
   }
-  
+
   .input-group {
     margin-bottom: 15px;
     text-align: left;
   }
-  
+
   label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
   }
-  
+
   input[type="number"] {
     width: 100%;
     padding: 10px;
@@ -66,7 +67,7 @@ body {
     border: none;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
-  
+
   button {
     width: 100%;
     padding: 10px;
@@ -79,14 +80,14 @@ body {
     transition: background 0.3s;
     animation: buttonHover 1s infinite;
   }
-  
+
   .change-due {
     margin-top: 20px;
     font-weight: bold;
     color: #ffcc00;
   }
-  
-  @media (max-width: 768px) {
+
+@media (max-width: 768px) {
     .container {
       padding: 20px;
     }
@@ -94,14 +95,14 @@ body {
     h1 {
       font-size: 1.5em;
     }
-  
+
     input[type="number"],
     button {
       font-size: 14px;
     }
   }
-  
-  @media (max-width: 480px) {
+
+@media (max-width: 480px) {
     h1 {
       font-size: 1.2em;
     }
@@ -111,16 +112,16 @@ body {
       font-size: 12px;
     }
   }
-  
-  @media (min-width: 1200px) {
+
+@media (min-width: 1200px) {
     .container {
       max-width: 500px;
     }
-  
+
     h1 {
       font-size: 2.5em;
     }
-  
+
     input[type="number"],
     button {
       font-size: 18px;
