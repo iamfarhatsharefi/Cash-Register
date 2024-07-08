@@ -55,7 +55,8 @@ purchaseBtn.addEventListener('click', () => {
 
     for (let i = denominations.length - 1; i >= 0; i -= 1) {
       const [denomination, value] = denominations[i];
-      let amountInDrawer = cid.find(item => item[0] === denomination)[1];
+      let amountInDrawer = cid.find((item) => item[0] === denomination)[1];
+
       let amountToReturn = 0;
 
       while (remainingChangeDue >= value && amountInDrawer > 0) {
@@ -90,8 +91,8 @@ purchaseBtn.addEventListener('click', () => {
   if (change.status === 'INSUFFICIENT_FUNDS') {
     changeDueElement.textContent = 'Status: INSUFFICIENT_FUNDS';
   } else if (change.status === 'CLOSED') {
-    changeDueElement.textContent = `Status: CLOSED ${change.change.map(c => `${c[0]}: $${c[1].toFixed(2)}`).join(' ')}`;
+    changeDueElement.textContent = `Status: CLOSED ${change.change.map((c) => `${c[0]}: $${c[1].toFixed(2)}`).join(' ')}`;
   } else {
-    changeDueElement.textContent = `Status: OPEN ${change.change.map(c => `${c[0]}: $${c[1].toFixed(2)}`).join(' ')}`;
+    changeDueElement.textContent = `Status: OPEN ${change.change.map((c) => `${c[0]}: $${c[1].toFixed(2)}`).join(' ')}`;
   }
 });
