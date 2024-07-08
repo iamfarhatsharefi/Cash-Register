@@ -55,8 +55,7 @@ function calculateChange(changeDue, cid) {
     changeDueElement.textContent = `Status: CLOSED ${change.change.map(c => `${c[0]}: $${c[1].toFixed(2)}`).join(" ")}`;
   } else {
     changeDueElement.textContent = `Status: OPEN ${change.change.map(c => `${c[0]}: $${c[1].toFixed(2)}`).join(" ")}`;
-  }
-});
+
 
   let totalCid = cid.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
 
