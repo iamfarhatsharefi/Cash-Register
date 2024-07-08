@@ -35,59 +35,63 @@ purchaseBtn.addEventListener('click', () => {
     return;
   }
 
-function calculateChange(changeDue, cid) {
+  function calculateChange(changeDue, cid) {
     const denominations = [
       ["PENNY", 0.01],
       ["NICKEL", 0.05],
-      ["DIME", 0.1],
+      ["DIME", 0.10],
       ["QUARTER", 0.25],
-      ["ONE", 1],
-      ["FIVE", 5],
-      ["TEN", 10],
-      ["TWENTY", 20],
-      ["ONE HUNDRED", 100]
+      ["ONE", 1.00],
+      ["FIVE", 5.00],
+      ["TEN", 10.00],
+      ["TWENTY", 20.00],
+      ["ONE HUNDRED", 100.00]
     ];
 
+    let totalCid = cid.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
+    let change = [];
+    let remainingChangeDue = changeDue;
+
+    for (let i = denominations.length - 1; i >= 0; i--) {
+      const [denomination, value] = denominations[i];
+      let amountInDrawer = cid.find(item => item[0] === denomination)[1];
+      let amountToReturn = 0;
+
+      while (remainingChangeDue >= value && amountInDrawer > 0) {
+        remainingChangeDue -= value;
+        remainingChangeDue = Math.round(remainingChangeDue * 100) / 100;
+        amountInDrawer -= value;
+        amountToReturn += value;
+      }
+
+      if (amountToReturn > 0) {
+        change.push([denomination, amountToReturn]);
+      }
+    }
+
+    const totalChangeGiven = change.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
+
+    if (remainingChangeDue > 0) {
+      return { status: 'INSUFFICIENT_FUNDS', change: [] };
+    }
+
+    if (totalCid === totalChangeGiven) {
+      return { 
+        status: 'CLOSED', 
+        change: change.sort((a, b) => denominations.indexOf(b[0]) - denominations.indexOf(a[0]))
+      };
+    }
+
+    return { status: 'OPEN', change: change };
+  }
+
   const change = calculateChange(changeDue, cid);
+
   if (change.status === "INSUFFICIENT_FUNDS") {
     changeDueElement.textContent = "Status: INSUFFICIENT_FUNDS";
   } else if (change.status === "CLOSED") {
     changeDueElement.textContent = `Status: CLOSED ${change.change.map(c => `${c[0]}: $${c[1].toFixed(2)}`).join(" ")}`;
   } else {
     changeDueElement.textContent = `Status: OPEN ${change.change.map(c => `${c[0]}: $${c[1].toFixed(2)}`).join(" ")}`;
-
-
-  let totalCid = cid.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
-
-  for (let i = denominations.length - 1; i >= 0; i--) {
-    const [denomination, value] = denominations[i];
-    let amountInDrawer = cid.find(item => item[0] === denomination)[1];
-    let amountToReturn = 0;
-  
-    while (changeDue >= value && amountInDrawer > 0) {
-      changeDue -= value;
-      changeDue = Math.round(changeDue * 100) / 100;
-      amountInDrawer -= value;
-      amountToReturn += value;
-    }
-  
-    if (amountToReturn > 0) {
-      change.push([denomination, amountToReturn]);
-    }
   }
-  
-  const totalChangeGiven = change.reduce((sum, [denomination, amount]) => sum + amount, 0).toFixed(2);
-
-  if (changeDue > 0) {
-    return { status: 'INSUFFICIENT_FUNDS', change: [] };
-  }
-
-  if (totalCid === totalChangeGiven) {
-    return { 
-      status: 'CLOSED', 
-      change: change.sort((a, b) => denominations.indexOf(b[0]) - denominations.indexOf(a[0])) 
-    };
-  }
-  
-  return { status: 'OPEN', change: change };
-  }
+});
