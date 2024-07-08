@@ -89,5 +89,5 @@ function calculateChange(changeDue, cid) {
     };
   }
   
-  return { status: 'OPEN', change };
-  
+  return { status: 'OPEN', change: change };
+  }
