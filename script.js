@@ -15,21 +15,23 @@ const cashInput = document.getElementById('cash');
 const changeDueElement = document.getElementById('change-due');
 const purchaseBtn = document.getElementById('purchase-btn');
 
-purchaseBtn.addEventListener("click", () => {
+purchaseBtn.addEventListener('click', () => {
   const cashGiven = parseFloat(cashInput.value);
   if (Number.isNaN(cashGiven)) {
-    alert("Please enter a valid number");
+    // eslint-disable-next-line no-alert
+    alert('Please enter a valid number');
     return;
   }
 
   if (cashGiven < price) {
-    alert("Customer does not have enough money to purchase the item");
+    // eslint-disable-next-line no-alert
+    alert('Customer does not have enough money to purchase the item');
     return;
   }
 
   const changeDue = cashGiven - price;
   if (changeDue === 0) {
-    changeDueElement.textContent = "No change due - customer paid with exact cash";
+    changeDueElement.textContent = 'No change due - customer paid with exact cash';
     return;
   }
 
@@ -77,7 +79,6 @@ function calculateChange(changeDue, cid) {
   }
   
   const totalChangeGiven = change.reduce((sum, [denomination, amount]) => sum + amount, 0).toFixed(2);
-
 
   if (changeDue > 0) {
     return { status: 'INSUFFICIENT_FUNDS', change: [] };
