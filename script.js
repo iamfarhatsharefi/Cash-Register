@@ -37,18 +37,18 @@ purchaseBtn.addEventListener('click', () => {
 
   function calculateChange(changeDue, cid) {
     const denominations = [
-      ["PENNY", 0.01],
-      ["NICKEL", 0.05],
-      ["DIME", 0.10],
-      ["QUARTER", 0.25],
-      ["ONE", 1.00],
-      ["FIVE", 5.00],
-      ["TEN", 10.00],
-      ["TWENTY", 20.00],
-      ["ONE HUNDRED", 100.00]
+      ['PENNY', 0.01],
+      ['NICKEL', 0.05],
+      ['DIME', 0.10],
+      ['QUARTER', 0.25],
+      ['ONE', 1.00],
+      ['FIVE', 5.00],
+      ['TEN', 10.00],
+      ['TWENTY', 20.00],
+      ['ONE HUNDRED', 100.00]
     ];
 
-    let totalCid = cid.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
+    const totalCid = cid.reduce((sum, [currency, amount]) => sum + amount, 0).toFixed(2);
     let change = [];
     let remainingChangeDue = changeDue;
 
@@ -82,14 +82,14 @@ purchaseBtn.addEventListener('click', () => {
       };
     }
 
-    return { status: 'OPEN', change: change };
+    return { status: 'OPEN', change };
   }
 
   const change = calculateChange(changeDue, cid);
 
-  if (change.status === "INSUFFICIENT_FUNDS") {
-    changeDueElement.textContent = "Status: INSUFFICIENT_FUNDS";
-  } else if (change.status === "CLOSED") {
+  if (change.status === 'INSUFFICIENT_FUNDS') {
+    changeDueElement.textContent = 'Status: INSUFFICIENT_FUNDS';
+  } else if (change.status === 'CLOSED') {
     changeDueElement.textContent = `Status: CLOSED ${change.change.map(c => `${c[0]}: $${c[1].toFixed(2)}`).join(" ")}`;
   } else {
     changeDueElement.textContent = `Status: OPEN ${change.change.map(c => `${c[0]}: $${c[1].toFixed(2)}`).join(" ")}`;
