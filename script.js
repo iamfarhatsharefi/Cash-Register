@@ -48,7 +48,8 @@ purchaseBtn.addEventListener('click', () => {
       ['ONE HUNDRED', 100.00],
     ];
 
-    const totalCid = cid.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
+    const totalCid = cid.reduce((sum, [, amount]) => sum + amount, 0).toFixed(2);
+
     const change = [];
     let remainingChangeDue = changeDue;
 
@@ -69,8 +70,7 @@ purchaseBtn.addEventListener('click', () => {
       }
     }
 
-    const totalChangeGiven = change.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
-
+    const totalChangeGiven = change.reduce((sum, [, amount]) => sum + amount, 0).toFixed(2);
     if (remainingChangeDue > 0) {
       return { status: 'INSUFFICIENT_FUNDS', change: [] };
     }
