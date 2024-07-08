@@ -36,7 +36,6 @@ purchaseBtn.addEventListener('click', () => {
   }
 
 function calculateChange(changeDue, cid) {
-    const change = [];
     const denominations = [
       ["PENNY", 0.01],
       ["NICKEL", 0.05],
