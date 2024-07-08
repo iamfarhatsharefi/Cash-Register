@@ -90,4 +90,4 @@ function calculateChange(changeDue, cid) {
   }
   
   return { status: 'OPEN', change };
-}
+  
