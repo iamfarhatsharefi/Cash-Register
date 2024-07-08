@@ -48,7 +48,7 @@ purchaseBtn.addEventListener('click', () => {
       ['ONE HUNDRED', 100.00],
     ];
 
-    const totalCid = cid.reduce((sum, [currency, amount]) => sum + amount, 0).toFixed(2);
+    const totalCid = cid.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
     const change = [];
     let remainingChangeDue = changeDue;
 
