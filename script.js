@@ -35,6 +35,20 @@ purchaseBtn.addEventListener('click', () => {
     return;
   }
 
+function calculateChange(changeDue, cid) {
+    const change = [];
+    const denominations = [
+      ["PENNY", 0.01],
+      ["NICKEL", 0.05],
+      ["DIME", 0.1],
+      ["QUARTER", 0.25],
+      ["ONE", 1],
+      ["FIVE", 5],
+      ["TEN", 10],
+      ["TWENTY", 20],
+      ["ONE HUNDRED", 100]
+    ];
+
   const change = calculateChange(changeDue, cid);
   if (change.status === "INSUFFICIENT_FUNDS") {
     changeDueElement.textContent = "Status: INSUFFICIENT_FUNDS";
@@ -44,20 +58,6 @@ purchaseBtn.addEventListener('click', () => {
     changeDueElement.textContent = `Status: OPEN ${change.change.map(c => `${c[0]}: $${c[1].toFixed(2)}`).join(" ")}`;
   }
 });
-
-function calculateChange(changeDue, cid) {
-  const change = [];
-  const denominations = [
-    ["PENNY", 0.01],
-    ["NICKEL", 0.05],
-    ["DIME", 0.1],
-    ["QUARTER", 0.25],
-    ["ONE", 1],
-    ["FIVE", 5],
-    ["TEN", 10],
-    ["TWENTY", 20],
-    ["ONE HUNDRED", 100]
-  ];
 
   let totalCid = cid.reduce((sum, [_, amount]) => sum + amount, 0).toFixed(2);
 
