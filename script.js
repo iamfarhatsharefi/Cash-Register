@@ -23,26 +23,6 @@ purchaseBtn.addEventListener('click', () => {
     return;
   }
 
-  let scenarios = [
-    {
-      price: 19.5,
-      cashGiven: 20,
-      cid: [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]],
-      expected: "Status: OPEN QUARTER: $0.50"
-    },
-    {
-      price: 3.26,
-      cashGiven: 100,
-      cid: [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]],
-      expected: "Status: OPEN TWENTY: $60.00 TEN: $20.00 FIVE: $15.00 ONE: $1.00 QUARTER: $0.50 DIME: $0.20 PENNY: $0.04"
-    }
-  ];
-
-  let scenario = scenarios.find(s => s.price === price && s.cashGiven === cashGiven && JSON.stringify(s.cid) === JSON.stringify(cid));
-  if (scenario) {
-    changeDueElement.textContent = scenario.expected;
-    return;
-  }
   if (cashGiven < price) {
     // eslint-disable-next-line no-alert
     alert('Customer does not have enough money to purchase the item');
