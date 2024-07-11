@@ -89,6 +89,22 @@ button {
   color: #fc0;
 }
 
+.cash-drawer-display {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: #fc0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.cash-drawer-display h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 20px;
@@ -102,6 +118,10 @@ button {
   button {
     font-size: 14px;
   }
+
+  .cash-drawer-display h2 {
+    font-size: 1.2em;
+  }
 }
 
 @media (max-width: 480px) {
@@ -112,6 +132,10 @@ button {
   input[type="number"],
   button {
     font-size: 12px;
+  }
+
+  .cash-drawer-display h2 {
+    font-size: 1em;
   }
 }
 
@@ -127,5 +151,9 @@ button {
   input[type="number"],
   button {
     font-size: 18px;
+  }
+
+  .cash-drawer-display h2 {
+    font-size: 1.8em;
   }
 }
