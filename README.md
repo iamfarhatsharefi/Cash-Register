@@ -10,7 +10,7 @@ This project is a cash register application designed to calculate change and man
 
 ## Demo 📸
 [Live Demo](https://iamfarhatsharefi.github.io/Cash-Register/)
-![Screenshot](./Cash-Register%20screenshot.png)
+![Screenshot](./picture%204.png)
 
 ## Technologies Used 🛠️
 
