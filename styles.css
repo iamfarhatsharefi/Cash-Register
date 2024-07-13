@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 main {
@@ -130,7 +130,6 @@ label {
   margin: 0 auto;
 }
 
-/* Media Queries */
 @media (max-width: 1024px) {
   h1 {
     font-size: 1.8rem;
