@@ -1,159 +1,207 @@
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: black;
+  color: yellow;
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: url('cash\ register.jpg') no-repeat center center fixed;
-  background-size: cover;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #fff;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes buttonHover {
-  0% {
-    background-color: #28a745;
-  }
-
-  50% {
-    background-color: #218838;
-  }
-
-  100% {
-    background-color: #28a745;
-  }
-}
-
-.container {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  max-width: 400px;
-  width: 100%;
-  animation: fadeIn 1s ease-in-out;
+main {
+  background: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  max-width: 800px;
+  width: 90%;
 }
 
 h1 {
+  text-align: center;
   margin-bottom: 20px;
-  font-size: 2em;
-  color: #fc0;
+  color: yellow;
+  font-size: 2rem;
 }
 
-.input-group {
-  margin-bottom: 15px;
-  text-align: left;
+.input-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+  flex: 1;
+  margin-right: 10px;
+  color: yellow;
 }
 
-input[type="number"] {
-  width: 100%;
+.user-input {
+  flex: 2;
   padding: 10px;
+  border: 1px solid yellow;
   border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background: #28a745;
-  color: #fff;
   font-size: 16px;
+  background: black;
+  color: yellow;
+}
+
+.check-btn-styles {
+  flex: 1;
+  padding: 10px;
+  background: yellow;
+  color: black;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
-  animation: buttonHover 1s infinite;
 }
 
-.change-due {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #fc0;
+.check-btn-styles:hover {
+  background: #ffc107;
 }
 
-.cash-drawer-display {
-  margin-top: 20px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-display-screen-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.price-screen {
+  flex: 2;
+  background: yellow;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+}
+
+.connector {
+  flex: 1;
+  height: 2px;
+  background: yellow;
+  margin: 0 10px;
+}
+
+.top-register, .bottom-register {
+  background: #444;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  color: #fc0;
-  animation: fadeIn 1s ease-in-out;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.cash-drawer-display h2 {
-  margin: 0;
-  font-size: 1.5em;
-  color: #fff;
+.btns-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 20px;
+.btn {
+  background: yellow;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.cash-drawer-display p {
+  margin: 5px 0;
+  color: yellow;
+}
+
+.circle {
+  background: yellow;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .price-screen {
+    font-size: 16px;
   }
 
-  h1 {
-    font-size: 1.5em;
-  }
-
-  input[type="number"],
-  button {
+  .check-btn-styles {
     font-size: 14px;
   }
 
-  .cash-drawer-display h2 {
-    font-size: 1.2em;
+  .user-input {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .input-div {
+    flex-direction: column;
+  }
+
+  .check-btn-styles {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 1.2em;
+  main {
+    padding: 10px;
   }
 
-  input[type="number"],
-  button {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .price-screen {
+    font-size: 14px;
+  }
+
+  .check-btn-styles {
     font-size: 12px;
   }
 
-  .cash-drawer-display h2 {
-    font-size: 1em;
+  .user-input {
+    font-size: 12px;
   }
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 500px;
-  }
-
+@media (max-width: 360px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 1.2rem;
   }
 
-  input[type="number"],
-  button {
-    font-size: 18px;
+  .price-screen {
+    font-size: 12px;
   }
 
-  .cash-drawer-display h2 {
-    font-size: 1.8em;
+  .check-btn-styles {
+    font-size: 10px;
+  }
+
+  .user-input {
+    font-size: 10px;
   }
 }
