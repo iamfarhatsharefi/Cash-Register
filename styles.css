@@ -130,7 +130,12 @@ label {
   margin: 0 auto;
 }
 
+/* Media Queries */
 @media (max-width: 1024px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
   .price-screen {
     font-size: 16px;
   }
@@ -142,13 +147,13 @@ label {
   .user-input {
     font-size: 14px;
   }
-
-  h1 {
-    font-size: 1.8rem;
-  }
 }
 
 @media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
   .input-div {
     flex-direction: column;
   }
@@ -161,19 +166,15 @@ label {
   .container {
     width: 100%;
   }
-
-  h1 {
-    font-size: 1.6rem;
-  }
 }
 
 @media (max-width: 480px) {
-  main {
-    padding: 10px;
-  }
-
   h1 {
     font-size: 1.4rem;
+  }
+
+  main {
+    padding: 10px;
   }
 
   .price-screen {
