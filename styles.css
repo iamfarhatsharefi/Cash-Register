@@ -93,7 +93,8 @@ label {
   margin: 0 10px;
 }
 
-.top-register, .bottom-register {
+.top-register,
+.bottom-register {
   background: #444;
   border-radius: 10px;
   padding: 20px;
