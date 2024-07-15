@@ -1,0 +1,208 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: black;
+  color: yellow;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  background: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  max-width: 800px;
+  width: 90%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: yellow;
+  font-size: 2rem;
+}
+
+.input-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  flex: 1;
+  margin-right: 10px;
+  color: yellow;
+}
+
+.user-input {
+  flex: 2;
+  padding: 10px;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  font-size: 16px;
+  background: black;
+  color: yellow;
+}
+
+.check-btn-styles {
+  flex: 1;
+  padding: 10px;
+  background: yellow;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.check-btn-styles:hover {
+  background: #ffc107;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-display-screen-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.price-screen {
+  flex: 2;
+  background: yellow;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+}
+
+.connector {
+  flex: 1;
+  height: 2px;
+  background: yellow;
+  margin: 0 10px;
+}
+
+.top-register,
+.bottom-register {
+  background: #444;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: yellow;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.cash-drawer-display p {
+  margin: 5px 0;
+  color: yellow;
+}
+
+.circle {
+  background: yellow;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .price-screen {
+    font-size: 16px;
+  }
+
+  .check-btn-styles {
+    font-size: 14px;
+  }
+
+  .user-input {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .input-div {
+    flex-direction: column;
+  }
+
+  .check-btn-styles {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .price-screen {
+    font-size: 14px;
+  }
+
+  .check-btn-styles {
+    font-size: 12px;
+  }
+
+  .user-input {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .price-screen {
+    font-size: 12px;
+  }
+
+  .check-btn-styles {
+    font-size: 10px;
+  }
+
+  .user-input {
+    font-size: 10px;
+  }
+}
